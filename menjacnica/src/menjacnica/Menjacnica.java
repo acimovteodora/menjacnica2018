@@ -11,6 +11,7 @@ import java.util.LinkedList;
 import sistemskeOperacije.SODodajValutu;
 import sistemskeOperacije.SOIzvrsiTransakciju;
 import sistemskeOperacije.SOObrisiValutu;
+import sistemskeOperacije.SOSacuvajUFajl;
 import sistemskeOperacije.SOUcitajIzFajla;
 
 public class Menjacnica implements MenjacnicaInterface{
@@ -44,16 +45,7 @@ public class Menjacnica implements MenjacnicaInterface{
 
 	@Override
 	public void sacuvajUFajl(String putanja) {
-		try{
-			ObjectOutputStream out = new ObjectOutputStream(
-					new BufferedOutputStream(new FileOutputStream(putanja)));
-			
-			out.writeObject(kursnaLista);
-			
-			out.close();
-		}catch(Exception e){
-			throw new RuntimeException(e);
-		}
+		SOSacuvajUFajl.izvrsi(putanja, kursnaLista);
 	}
 
 	
