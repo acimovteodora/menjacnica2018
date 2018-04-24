@@ -9,6 +9,7 @@ import java.io.ObjectOutputStream;
 import java.util.LinkedList;
 
 import sistemskeOperacije.SODodajValutu;
+import sistemskeOperacije.SOIzvrsiTransakciju;
 import sistemskeOperacije.SOObrisiValutu;
 
 public class Menjacnica implements MenjacnicaInterface{
@@ -27,10 +28,7 @@ public class Menjacnica implements MenjacnicaInterface{
 
 	@Override
 	public double izvrsiTransakciju(Valuta valuta, boolean prodaja, double iznos) {
-		if (prodaja)
-			return iznos*valuta.getProdajni();
-		else
-			return iznos*valuta.getKupovni();
+		return SOIzvrsiTransakciju.izvrsi(valuta, prodaja, iznos);
 	}
 
 	@Override
