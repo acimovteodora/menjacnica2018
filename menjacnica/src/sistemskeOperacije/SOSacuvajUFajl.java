@@ -15,6 +15,7 @@ public class SOSacuvajUFajl {
 					new BufferedOutputStream(new FileOutputStream(putanja)));
 			
 			out.writeObject(kursnaLista);
+			out.close();
 		}catch(Exception e){
 			throw new RuntimeException(e);
 		}
