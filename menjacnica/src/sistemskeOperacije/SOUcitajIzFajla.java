@@ -15,7 +15,6 @@ public class SOUcitajIzFajla {
 					new BufferedInputStream(new FileInputStream(putanja)));
 			
 			kursnaLista = (LinkedList<Valuta>)(in.readObject());
-			in.close();
 			return kursnaLista;
 			
 		}catch(Exception e){
